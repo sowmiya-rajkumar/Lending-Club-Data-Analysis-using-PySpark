@@ -17,14 +17,20 @@
 
 **Step8:** So we are using `df_selected.cache()` where .cache() method is used to persist a DataFrame or RDD in memory. When you cache a DataFrame or RDD, it is stored in memory the first time it is computed, which allows subsequent actions on the same data to be much faster. This is especially useful when you have multiple actions that need to be performed on the same DataFrame or RDD. <br />
       - Like most operations in Spark, caching is lazy. The DataFrame/RDD is not actually cached until an action (such as count(), collect(), or show()) is performed on it. <br />
-
-      So what is RDD?<br />
-      RDD stands for Resilient Distributed Dataset. It is a fundamental data structure of Apache Spark, representing an immutable distributed collection of objects that can be processed in parallel. Here are the key features and concepts related to RDDs: <br />
+      - So what is RDD?<br />
+      RDD stands for Resilient Distributed Dataset. It is a fundamental data structure of Apache Spark, representing an immutable distributed collection of objects that can be 
+      processed in parallel. Here are the key features and concepts related to RDDs: <br />
       1. Immutable<br />
       2. Distributed<br />
       3. Fault tolerance<br />
       4.Lazy Evaluation<br />
 
-**Step8:** Now we use `show()` with `.describe()` which much more limited columns and we get a output that is interpretable. From the output we can see that the columns "emp_length" and "revol_util" are null since they are treated as string data types. Additionally, the mean, standard deviation, and maximum values of the "dti" column indicate the presence of a potential outlier.
+**Step8:** Now we use `show()` with `.describe()` which much more limited columns and we get a output that is interpretable. From the output we can see that the columns "emp_length" and "revol_util" are null since they are treated as string data types. Additionally, the mean, standard deviation, and maximum values of the "dti" column indicate the presence of a potential outlier.<br />
 
-**Step8:** Cleanup "emp_length" column using regexp_replace(), regexp_extract(), col() functions from `pyspark.sql.functions`
+**Step8:** Cleanup "emp_length" and "term" columns using regexp_replace(), regexp_extract(), col() functions from `pyspark.sql.functions`<br />
+
+**Step9:** checking the covariance, correlation between the columns.<br />
+
+**Step10:** Finding the quantiles for "loan_amnt" using `approxQuantile` function.<br />
+
+**Step11:** Handling Null by removing or replacing with avg values.<br />
