@@ -25,12 +25,12 @@
       3. Fault tolerance<br />
       4.Lazy Evaluation<br />
 
-**Step8:** Now we use `show()` with `.describe()` which much more limited columns and we get a output that is interpretable. From the output we can see that the columns "emp_length" and "revol_util" are null since they are treated as string data types. Additionally, the mean, standard deviation, and maximum values of the "dti" column indicate the presence of a potential outlier.<br />
+**Step9:** Now we use `show()` with `.describe()` which much more limited columns and we get a output that is interpretable. From the output we can see that the columns "emp_length" and "revol_util" are null since they are treated as string data types. Additionally, the mean, standard deviation, and maximum values of the "dti" column indicate the presence of a potential outlier.<br />
 
-**Step8:** Cleanup "emp_length" and "term" columns using regexp_replace(), regexp_extract(), col() functions from `pyspark.sql.functions`<br />
+**Step10:** Cleanup "emp_length" and "term" columns using regexp_replace(), regexp_extract(), col() functions from `pyspark.sql.functions`<br />
 
-**Step9:** checking the covariance, correlation between the columns.<br />
+**Step11:** checking the covariance, correlation between the columns.<br />
 
-**Step10:** Finding the quantiles for "loan_amnt" using `approxQuantile` function.<br />
+**Step12:** Finding the quantiles for "loan_amnt" using `approxQuantile` function.<br />
 
-**Step11:** Handling Null by removing or replacing with avg values.<br />
+**Step13:** Handling Null by removing or replacing with avg values.<br />
